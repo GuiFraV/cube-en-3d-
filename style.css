@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cube {
+    width: 100px;
+    height: 100px;
+    perspective: 200px;
+  }
+  
+  #cube figure {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: spin-cube 5s infinite linear;
+  }
+  
+  #cube figure div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 1px solid black;
+    box-sizing: border-box;
+  }
+  
+  #cube .front {
+    transform: translateZ(50px);
+  }
+  
+  #cube .back {
+    transform: rotateY(180deg) translateZ(50px);
+  }
+  
+  #cube .right {
+    transform: rotateY(90deg) translateZ(50px);
+  }
+  
+  #cube .left {
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+  
+  #cube .top {
+    transform: rotateX(90deg) translateZ(50px);
+  }
+  
+  #cube .bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+  }
+  
+  @keyframes spin-cube {
+    from {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+  
